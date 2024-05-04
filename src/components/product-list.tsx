@@ -1,6 +1,7 @@
-import { db } from "@/lib/prisma";
-import ProductItem from "./product-item";
+"use client";
+
 import { Prisma } from "@prisma/client";
+import ProductItem from "./product-item";
 
 interface ProductsListProps {
   products: Prisma.ProductGetPayload<{
@@ -14,7 +15,7 @@ interface ProductsListProps {
   }>[];
 }
 
-const ProductList = async ({ products }: ProductsListProps) => {
+const ProductList = ({ products }: ProductsListProps) => {
   return (
     <div className="flex gap-4 overflow-x-scroll [&::-webkit-scrollbar]:hidden">
       {products.map((product) => (
