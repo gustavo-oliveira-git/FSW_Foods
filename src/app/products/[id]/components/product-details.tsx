@@ -42,8 +42,8 @@ const ProductDetails = ({ product, extraProducts }: ProductDetailsProps) => {
   return (
     <div className="relative z-50 mt-[-1.5rem] rounded-tl-3xl rounded-tr-3xl bg-white py-5">
       <div className="p-5">
+        {/*Restaurant Image */}
         <div className="flex items-center gap-1">
-          {/*Restaurant Image */}
           <div className="relative h-6 w-6">
             <Image
               src={product.restaurant.imageUrl}

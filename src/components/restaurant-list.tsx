@@ -1,3 +1,4 @@
+
 import { db } from "@/lib/prisma";
 import RestaurantItem from "./restaurant-item";
 

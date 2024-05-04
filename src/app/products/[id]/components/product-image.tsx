@@ -12,6 +12,8 @@ interface ProductImageProps {
 
 const ProductImage = ({ product }: ProductImageProps) => {
   const router = useRouter();
+
+  const handleBackClick = () => router.back();
   return (
     <div className="relative h-[360px] w-full">
       <Image
@@ -23,6 +25,7 @@ const ProductImage = ({ product }: ProductImageProps) => {
       <Button
         className="absolute top-4 left-4 bg-white rounded-full text-foreground hover:text-white "
         size={"icon"}
+        onClick={handleBackClick}
       >
         <ChevronLeftIcon />
       </Button>
