@@ -5,6 +5,7 @@ import Image from "next/image";
 import { calculateProductTotalPrice, formatCurrency } from "./helpers/price";
 import { ArrowDownIcon } from "lucide-react";
 import Link from "next/link";
+import { cn } from "@/lib/utils";
 
 interface ProductItemProps {
   product: Prisma.ProductGetPayload<{
@@ -16,17 +17,18 @@ interface ProductItemProps {
       };
     };
   }>;
+  className?: string
 }
 
-const ProductItem = ({ product }: ProductItemProps) => {
+const ProductItem = ({ product, className }: ProductItemProps) => {
   return (
       <Link
-        className="w-[150px] min-w-[150px]"
+        className={cn("w-[150px] min-w-[150px]", className)}
         href={`/products/${product.id}`}
       >
         <div className="w-full space-y-2">
           {/* Imagem */}
-          <div className="h-[150px] relative w-full">
+          <div className="aspect-square relative w-full">
             <Image
               src={product.imageUrl}
               alt={product.name}
